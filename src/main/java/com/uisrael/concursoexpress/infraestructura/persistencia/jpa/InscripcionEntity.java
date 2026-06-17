@@ -1,5 +1,6 @@
 package com.uisrael.concursoexpress.infraestructura.persistencia.jpa;
 
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -8,15 +9,13 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "participante")
-public class ParticipanteEntity {
+@Table(name = "inscripcion")
+public class InscripcionEntity {
+	
 	@Id
-	private int idParticipante;
-	private String nombre;
-	private String apellido;
-	private String identificacion;
-	private String correoPersonal;
-	private String telefono;
+	private int idInscripcion;
+	private Date fechaInscripcion;
+	private String descripcion;
 	private boolean estadoRegistro;
 	
 
