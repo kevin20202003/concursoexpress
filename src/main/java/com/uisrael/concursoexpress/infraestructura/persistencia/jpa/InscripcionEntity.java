@@ -15,7 +15,7 @@ public class InscripcionEntity {
 	@Id
 	private int idInscripcion;
 	private Date fechaInscripcion;
-	private String descripcion;
+	private String observacion;
 	private boolean estadoRegistro;
 	
 
