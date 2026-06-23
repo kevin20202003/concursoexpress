@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.uisrael.concursoexpress.infraestructura.persistencia.jpa.ParticipanteEntity;
 
-public interface IParticipanteRepositorio extends JpaRepository<ParticipanteEntity, Integer>{
+public interface IParticipanteJpaRepositorio extends JpaRepository<ParticipanteEntity, Integer>{
 	
 	
 

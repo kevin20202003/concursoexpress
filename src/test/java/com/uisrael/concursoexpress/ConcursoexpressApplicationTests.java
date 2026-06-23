@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.uisrael.concursoexpress.infraestructura.persistencia.jpa.ParticipanteEntity;
-import com.uisrael.concursoexpress.infraestructura.repositorio.IParticipanteRepositorio;
+import com.uisrael.concursoexpress.infraestructura.repositorio.IParticipanteJpaRepositorio;
 
 @SpringBootTest
 class ConcursoexpressApplicationTests {
 	
 	@Autowired
-	IParticipanteRepositorio repo;
+	IParticipanteJpaRepositorio repo;
 
 	@Test
 	void contextLoads() {
