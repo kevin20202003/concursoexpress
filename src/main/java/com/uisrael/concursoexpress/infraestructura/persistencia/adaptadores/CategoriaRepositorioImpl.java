@@ -44,4 +44,11 @@ public class CategoriaRepositorioImpl implements ICategoriaRepositorio{
 		
 	}
 
+	@Override
+	public List<Categoria> findByNombreCategoria(String nombreCategoria) {
+	    return jpaRepositorio.findByNombreCategoria(nombreCategoria).stream()
+	            .map(entityMapper::toDomain)
+	            .toList();
+	}
+
 }

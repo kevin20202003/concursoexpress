@@ -5,6 +5,7 @@ import java.util.List;
 import com.uisrael.concursoexpress.aplicacion.casosuso.entrada.ICategoriaUseCase;
 import com.uisrael.concursoexpress.dominio.entidades.Categoria;
 import com.uisrael.concursoexpress.dominio.repositorio.ICategoriaRepositorio;
+import com.uisrael.concursoexpress.infraestructura.persistencia.jpa.CategoriaEntity;
 
 public class CategoriaUseCaseImpl implements ICategoriaUseCase{
 	
@@ -39,6 +40,12 @@ public class CategoriaUseCaseImpl implements ICategoriaUseCase{
 
 		repositorio.eliminar(idCategoria);
 		
+	}
+
+	@Override
+	public List<Categoria> findByNombreCategoria(String nombreCategoria) {
+		// TODO Auto-generated method stub
+		return repositorio.findByNombreCategoria(nombreCategoria);
 	}
 
 }

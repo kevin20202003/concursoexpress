@@ -1,35 +1,27 @@
 package com.uisrael.concursoexpress.infraestructura.persistencia.jpa;
 
-import java.util.Date;
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "inscripcion")
-public class InscripcionEntity {
+public class InscripcionParticipanteEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idInscripcion;
-	private Date fechaInscripcion;
+	private int idInscripcionParticipante;
+	@ManyToOne
+	@JoinColumn(name = "fkParticipanteEntity")
+	private ParticipanteEntity idParticipanteEntity;
+	@ManyToOne
+	@JoinColumn(name = "fkInscripcionEntity")
+	private InscripcionEntity fkInscripcionEntity;
 	private String observacion;
 	private boolean estadoRegistro;
-	@ManyToOne
-	@JoinColumn(name = "fk_categoria")
-	private CategoriaEntity fkCategoriaEntity;
-	
-	@OneToMany(mappedBy = "fkInscripcionEntity")
-	private List<InscripcionParticipanteEntity> listaParticipanteInscripcion;
-	
 
 }

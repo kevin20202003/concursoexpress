@@ -52,5 +52,11 @@ public class CategoriaController {
 		categoriaUseCase.eliminar(idCategoria);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@GetMapping("/{nombreCategoria}")
+	public List<CategoriaResponseDto> findByNombreCategoria(@PathVariable String nombreCategoria) {
+		
+		return categoriaUseCase.findByNombreCategoria(nombreCategoria).stream().map(mapper :: toResponseDto).toList();
+	}
 
 }

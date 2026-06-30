@@ -1,10 +1,13 @@
 package com.uisrael.concursoexpress.infraestructura.persistencia.jpa;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -21,6 +24,8 @@ public class CategoriaEntity {
 		@Column(name = ("descripcion_categoria"), length = 200)
 		private String descripcion;
 		private boolean estadoRegistro;
+		@OneToMany(mappedBy = "fkCategoriaEntity")
+		private List<InscripcionEntity> inscripciones;
 		
 	
 }
